@@ -1,60 +1,90 @@
-\# Revenue Leakage \& Profit Optimization Analysis (SQL + Power BI)
+# Revenue Leakage & Profit Optimization Analysis (SQL + Power BI)
+
+## Overview
+This project analyzes product-level sales, profit, and discount behavior to identify revenue leakage and uncover underperforming products.
+
+The goal is to move beyond raw revenue and understand where aggressive discounting may be negatively impacting profitability.
+
+---
+
+## Tools Used
+- PostgreSQL
+- SQL (CTEs, CASE statements, aggregations)
+- Power BI (data modeling, visualization)
+
+---
+
+## Data Preparation
+
+A SQL view called `profit_analysis` was created to transform transactional data into product-level insights.
+
+Key transformations include:
+- Aggregating total sales, profit, quantity, and average discount per product
+- Calculating profit margin using profit vs sales
+- Classifying products into:
+  - Loss Making
+  - Low Margin
+  - Medium Margin
+  - High Margin
+- Categorizing discount levels:
+  - Low Discount
+  - Moderate Discount
+  - High Discount
+
+---
+
+## Dashboard Features
+
+- **KPI Metrics**
+  - Product Count
+  - Revenue
+  - Profit
+  - Average Discount
+
+- **Product Profitability Distribution**
+  - Breakdown of products by margin category
+
+- **Profit by Category**
+  - Comparison of profitability across product categories
+
+- **Discount Strategy Breakdown**
+  - Distribution of products across discount levels
+
+- **Discount Impact on Profitability**
+  - Scatter plot showing relationship between discounting and profit
+
+- **Top Underperforming Products**
+  - Identifies products with low or negative profitability
+
+---
+
+## Key Insights
+
+- A majority of products fall into the medium margin category
+- High discounting does not consistently lead to higher profitability
+- Several products show low or negative profit despite moderate to high discounts
+- Revenue leakage is primarily driven by over-discounted, low-margin products
+
+---
+
+## Project Structure
+
+```text
+data/
+sql/
+powerbi/
+screenshots/
+README.md
+
+## Screenshots
+
+### SQL View
+
+![SQL View](screenshots/01_profit_analysis_view.png)
 
 
 
-\## Overview
+### Dashboard
 
-This project analyzes product-level sales, profit, and discount behavior to identify revenue leakage and highlight where the business may be sacrificing margin.
-
-
-
-\## Tools Used
-
-\- PostgreSQL
-
-\- SQL
-
-\- Power BI
-
-
-
-\## Data Preparation
-
-A SQL view called `profit\_analysis` was created to:
-
-\- aggregate sales, profit, discount, and quantity at the product level
-
-\- classify products into profit status groups
-
-\- classify products into discount level groups
-
-
-
-\## Dashboard Features
-
-\- Total products, sales, and profit KPIs
-
-\- Profit status distribution
-
-\- Category profitability
-
-\- Discount level breakdown
-
-\- Discount vs profit scatter analysis
-
-\- Top 10 loss-making products
-
-
-
-\## Screenshots
-
-\### SQL View
-
-!\[SQL View](screenshots/01\_profit\_analysis\_view.png)
-
-
-
-\### Dashboard
-
-!\[Dashboard](screenshots/02\_revenue\_leakage\_dashboard.png)
+![Dashboard](screenshots/02_revenue_leakage_dashboard.png)
 

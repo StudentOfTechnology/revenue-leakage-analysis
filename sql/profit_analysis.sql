@@ -1,0 +1,1 @@
+SELECT * FROM profit_analysis LIMIT 10;

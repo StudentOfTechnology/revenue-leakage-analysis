@@ -69,7 +69,6 @@ Key transformations include:
 
 ## Project Structure
 
-```text
 data/
 sql/
 powerbi/
